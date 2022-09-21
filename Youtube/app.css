@@ -1,0 +1,158 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+
+/* html, body {
+  margin: 0;
+  padding: 0;
+  width: 400px;
+  height: 800px;
+  box-sizing: border-box;
+} */
+
+.video video {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.head-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background-color: #212529;
+  color: white;
+}
+
+.head-line__logo i {
+  color: red;
+  margin-right: 4px;
+}
+
+.info {
+  display: flex;
+  flex-flow: column;
+}
+
+.metadata {
+  font-weight: bold;
+  padding: 10px;
+}
+
+.metadata ul {
+  margin: 4px;
+}
+
+.metadata ul li {
+  display: inline-block;
+  color: #3a86ff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+.metadata .views {
+  font-size: 12px;
+}
+
+.metadata .titleAndButton {
+  display: flex;
+  font-weight: 400;
+}
+
+.metadata .titleAndButton button {
+  background-color: white;
+  border: none;
+  align-self: center;
+}
+
+.metadata .views {
+  color: #00b4d8;
+  margin: 4px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.actions li i {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.actions li button {
+  border: none;
+  background-color: white;
+}
+
+
+
+/* .channels {
+  display: flex;
+} */
+
+.channels {
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.channels .metadata {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+.channels .metadata span {
+  display: block;
+}
+
+.channels .metadata img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.channels .metadata .channels-info {
+  flex-grow: 1;
+}
+
+.metadata .subscribe {
+  align-self: center;
+  background-color: white;
+  border: none;
+}
+
+.upnext {
+  padding: 10px;
+}
+
+
+
+.upnext ul li {
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+.upnext ul li img {
+  width: 150px;
+}
+
+.upnext ul li .info {
+  padding: 0 10px;
+}
+
+.upnext ul li button {
+  align-self: flex-start;
+  background-color: white;
+  border: none;
+}

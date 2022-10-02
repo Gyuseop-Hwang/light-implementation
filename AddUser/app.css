@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+  background: #000;
+  font-family: 'Roboto', sans-serif;
+}
+
+.card {
+  background: white;
+  box-shadow: 2px 1px 3px rgba(0, 0, 0, 0.26);
+
+  border-radius: 5px;
+}
+
+.form-box {
+  width: 90%;
+  max-width: 40rem;
+  margin: 2rem auto;
+  padding: 1rem;
+
+}
+
+.form-box label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form-box input {
+  display: block;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  padding: 0.25rem;
+  outline: none;
+  border: 1px solid black;
+}
+
+.form-box input:focus {
+  border: 1px solid #d820d8;
+}
+
+
+/* .form-box button {
+  font: inherit;
+} */
+
+.form-box .btn {
+  font: inherit;
+  outline: none;
+  border: 1px solid purple;
+  background: purple;
+  padding: 0.5rem;
+  color: white;
+}
+
+.form-box .btn:hover,
+.form-box .btn:active {
+  background: #d820d8;
+  border: 1px solid #d820d8;
+}
+
+
+.userlist {
+  width: 90%;
+  max-width: 40rem;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.userlist ul {
+  list-style: none;
+  /* margin-bottom: 0.5rem; */
+  padding: 0;
+  margin: 0;
+
+}
+
+.userlist ul li {
+  border: 1px solid #ccc;
+  margin-bottom: 0.5rem;
+  padding: 0.25rem;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.26);
+}

@@ -17,6 +17,48 @@ html, body {
   border-radius: 5px;
 }
 
+.backdrop {
+  background-color: rgba(0, 0, 0, 0.26);
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  height: 100vh;
+  display: none;
+}
+
+.backdrop.on {
+  display: block;
+}
+
+.modal {
+  width: 50%;
+  max-width: 40rem;
+  padding: 1rem;
+  position: fixed;
+  top: 30vh;
+  left: 25%;
+  display: none;
+  z-index: 100;
+}
+
+.modal h3 {
+  margin: 0 0 1rem 0;
+}
+
+.modal p {
+  margin: 0 0 1rem 0;
+}
+
+.modal div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal.on {
+  display: block;
+}
+
+
 .form-box {
   width: 90%;
   max-width: 40rem;
@@ -49,7 +91,7 @@ html, body {
   font: inherit;
 } */
 
-.form-box .btn {
+.btn {
   font: inherit;
   outline: none;
   border: 1px solid purple;
@@ -58,8 +100,8 @@ html, body {
   color: white;
 }
 
-.form-box .btn:hover,
-.form-box .btn:active {
+.btn:hover,
+.btn:active {
   background: #d820d8;
   border: 1px solid #d820d8;
 }
@@ -85,4 +127,11 @@ html, body {
   margin-bottom: 0.5rem;
   padding: 0.25rem;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.26);
+}
+
+@media(min-width : 900px) {
+  .modal {
+    width: 40rem;
+    left: calc(50% - 20rem);
+  }
 }

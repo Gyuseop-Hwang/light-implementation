@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+}
+
+body {
+  margin: 4rem;
+  background-color: #edf2f4;
+}
+
+h1 {
+  color: #3838ee;
+}
+
+.card {
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.26);
+}
+
+.todo-box {
+  padding: 1rem;
+  width: 30%;
+
+}
+
+.todo-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-box li {
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 0.25rem;
+}
+
+.todo-box .actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  font: inherit;
+  border: 1px solid skyblue;
+  outline: none;
+  background: skyblue;
+  padding: 0.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:active {
+  border: 1px solid #3838ee;
+  background: #3838ee;
+
+}

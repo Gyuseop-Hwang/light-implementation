@@ -8,7 +8,7 @@ const backdrop = document.querySelector('.backdrop');
 
 const deleteMode = document.querySelector('.delete-mode')
 
-const deleteCancelButton = document.querySelector('.delete-mode .actions .btn.cancel');
+let deleteCancelButton = document.querySelector('.delete-mode .actions .btn.cancel');
 
 let todoListsArr = [
   { job: 'React', priority: 3 },
@@ -96,6 +96,23 @@ const selectHandler = (evt) => {
 
 }
 
+function deleteCancelButtonHandler(button) {
+  addButton.disabled = false;
+  addButton.classList.toggle('disabled')
+  backdrop.classList.toggle('delete');
+  deleteMode.classList.toggle('on');
+  todoLists.classList.toggle('deletemode');
+  todoLists.removeEventListener('click', selectHandler);
+  const allTodos = todoLists.querySelectorAll('li');
+  allTodos.forEach(todo => {
+    todo.classList.remove('delete-select')
+  })
+  deleteButton.replaceWith(button);
+  deleteButton = document.querySelector('.todo-box .btn.delete')
+  deleteButton.addEventListener('click', deleteModeHandler)
+  // this.removeEventListener('click', deleteCancelButtonHandler);
+}
+
 const deleteModeHandler = (evt) => {
 
   backdrop.classList.toggle('delete')
@@ -114,6 +131,8 @@ const deleteModeHandler = (evt) => {
   todoLists.classList.toggle('deletemode')
 
   todoLists.addEventListener('click', selectHandler)
+
+  deleteCancelButton.addEventListener('click', deleteCancelButtonHandler.bind(deleteCancelButton, newButton), { once: true })
 
   deleteButton.addEventListener('click', (evt) => {
     todoListsArr = todoListsArr.filter(todo => !todo.delete);
@@ -139,17 +158,14 @@ const deleteModeHandler = (evt) => {
     deleteMode.classList.toggle('on');
     deleteButton.replaceWith(newButton);
     deleteButton = document.querySelector('.todo-box .btn.delete')
+    const dummy = deleteCancelButton.cloneNode(true);
+    deleteCancelButton.replaceWith(dummy);
+    deleteCancelButton = document.querySelector('.delete-mode .actions .btn.cancel')
+    // deleteCancelButton.addEventListener('click', deleteCancelButtonHandler.bind(deleteCancelButton, newButton), { once: true })
     deleteButton.addEventListener('click', deleteModeHandler)
   })
 
-  // deleteCancelButton.addEventListener('click', () => {
-  //   backdrop.classList.toggle('delete');
-  //   deleteMode.classList.toggle('on');
-  //   todoLists.removeEventListener('click', selectHandler)
-  //   deleteButton.replaceWith(newButton);
-  //   deleteButton = document.querySelector('.todo-box .btn.delete')
-  //   deleteButton.addEventListener('click', deleteModeHandler)
-  // })
+
 
 }
 

@@ -15,6 +15,84 @@ h1 {
   color: #3838ee;
 }
 
+.backdrop {
+  background-color: rgba(6, 6, 174, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  display: none;
+}
+
+.backdrop.on {
+  display: block;
+}
+
+.backdrop.delete {
+  background-color: rgba(0, 0, 0, 0.26);
+  display: block;
+  z-index: -1;
+}
+
+.modal {
+  width: 80%;
+  max-width: 40rem;
+  padding: 1rem;
+  position: fixed;
+  top: 30vh;
+  left: calc(50% - 20rem);
+  z-index: 100;
+  display: none;
+}
+
+.modal label {
+  margin-bottom: 0.25rem;
+}
+
+.modal form {
+  display: flex;
+  flex-flow: column;
+}
+
+.modal form .form-control {
+  padding: 0.5rem 0 0.5rem 0;
+}
+
+.modal .form-control:first-of-type input {
+  width: 90%;
+}
+
+.modal .actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal .actions .cancel {
+  margin-right: 0.5rem;
+}
+
+.modal.on {
+  display: block;
+}
+
+.delete-mode {
+  width: 30%;
+  padding: 1rem;
+  display: none;
+  margin-top: 2rem;
+}
+
+.delete-mode .actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.delete-mode.on {
+  display: block;
+}
+
 .card {
   border-radius: 10px;
   background-color: #ffffff;
@@ -32,10 +110,18 @@ h1 {
   padding: 0;
 }
 
+.todo-box ul.deletemode {
+  cursor: pointer;
+}
+
 .todo-box li {
   font-size: 1.25rem;
   font-weight: bold;
   padding: 0.25rem;
+}
+
+.todo-box li.delete-select {
+  background-color: red;
 }
 
 .todo-box .actions {
@@ -45,9 +131,9 @@ h1 {
 
 .btn {
   font: inherit;
-  border: 1px solid skyblue;
+  border: 1px solid purple;
   outline: none;
-  background: skyblue;
+  background: purple;
   padding: 0.5rem;
   color: white;
   cursor: pointer;
@@ -55,7 +141,13 @@ h1 {
 
 .btn:hover,
 .btn:active {
-  border: 1px solid #3838ee;
-  background: #3838ee;
+  border: 1px solid rgb(237, 7, 237);
+  background: rgb(237, 7, 237);
 
+}
+
+.btn.disabled {
+  background: rgb(229, 243, 248);
+  border: 1px solid rgb(229, 243, 248);
+  cursor: none;
 }
